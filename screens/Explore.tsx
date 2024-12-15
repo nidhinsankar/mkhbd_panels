@@ -1,11 +1,19 @@
-import {Text, View} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
+import ParallaxScroll from '../components/ParallaxScroll';
 
 const ExploreScreen = () => {
   return (
-    <View>
-      <Text>Home Screen</Text>
+    <View style={Styles.container}>
+      <ParallaxScroll />
     </View>
   );
 };
 
 export default ExploreScreen;
+
+const Styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+  },
+});

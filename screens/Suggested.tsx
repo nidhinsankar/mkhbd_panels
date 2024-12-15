@@ -11,6 +11,7 @@ const SuggestedScreen = () => {
         <FlatList
           data={IMAGES_LIST}
           keyExtractor={item => item.imgSrc}
+          numColumns={2}
           renderItem={({item}) => (
             <ImageCard creator={item.creator} imgSrc={item.imgSrc} />
           )}
@@ -23,6 +24,7 @@ const SuggestedScreen = () => {
 const Styles = StyleSheet.create({
   container: {
     flex: 1,
+    rowGap: 10,
   },
 });
 

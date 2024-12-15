@@ -27,17 +27,22 @@ export default ImageCard;
 
 const styles = StyleSheet.create({
   cardContainer: {
-    width: win.width,
+    width: win.width / 2.1,
+    margin: 3,
     position: 'relative',
-    padding: 3,
-    height: win.height,
+    borderRadius: 10,
+    height: win.height / 2,
   },
   img: {
     flex: 1,
+    borderRadius: 10,
   },
   card_footer: {
     width: '100%',
     flexDirection: 'row',
+    paddingHorizontal: 2,
+    borderBottomLeftRadius: 10,
+    borderBottomRightRadius: 10,
     justifyContent: 'space-between',
     backgroundColor: '#000',
     paddingVertical: 10,
