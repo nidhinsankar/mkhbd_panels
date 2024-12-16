@@ -1,18 +1,20 @@
 import {
   Dimensions,
+  FlatList,
   Image,
   ScrollView,
   StyleSheet,
   Text,
   View,
 } from 'react-native';
-import {IMAGE_6} from '../utils/constants';
+import {IMAGE_6, IMAGES_LIST} from '../utils/constants';
 import Animated, {
   interpolate,
   useAnimatedStyle,
   useAnimatedRef,
   useScrollViewOffset,
 } from 'react-native-reanimated';
+import ImageCard from './ImageCard';
 const window = Dimensions.get('window');
 const IMG_HEIGHT = 300;
 
@@ -46,7 +48,7 @@ const ParallaxScroll = () => {
         source={{uri: IMAGE_6}}
         style={[styles.img, ImageAnimatedStyle]}
       />
-      <View style={{height: 2000, backgroundColor: '#fff'}}>
+      <View style={{backgroundColor: '#fff'}}>
         <Text
           style={{
             fontSize: 20,
@@ -56,6 +58,14 @@ const ParallaxScroll = () => {
           }}>
           Parallax Scroll
         </Text>
+        <FlatList
+          data={IMAGES_LIST}
+          keyExtractor={item => item.imgSrc}
+          numColumns={2}
+          renderItem={({item}) => (
+            <ImageCard creator={item.creator} imgSrc={item.imgSrc} />
+          )}
+        />
       </View>
     </Animated.ScrollView>
   );
