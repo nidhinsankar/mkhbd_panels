@@ -48,18 +48,20 @@ const ParallaxScroll = () => {
         source={{uri: IMAGE_6}}
         style={[styles.img, ImageAnimatedStyle]}
       />
-      <View style={{backgroundColor: '#fff'}}>
+      <View style={{backgroundColor: 'white'}}>
         <Text
           style={{
+            textAlign: 'center',
             fontSize: 20,
             fontWeight: 'bold',
-            textAlign: 'center',
             marginTop: 20,
           }}>
           Parallax Scroll
         </Text>
         <FlatList
           data={IMAGES_LIST}
+          scrollEnabled={false}
+          style={{backgroundColor: 'white'}}
           keyExtractor={item => item.imgSrc}
           numColumns={2}
           renderItem={({item}) => (
